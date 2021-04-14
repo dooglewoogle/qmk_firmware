@@ -80,6 +80,7 @@
 #    define RGBLIGHT_EFFECT_RGB_TEST
 #    define RGBLIGHT_EFFECT_ALTERNATING
 #    define RGBLIGHT_EFFECT_TWINKLE
+#    define RGBLIGHT_EFFECT_REACT
 #endif
 
 #ifdef RGBLIGHT_STATIC_PATTERNS
@@ -97,7 +98,8 @@
   || defined(RGBLIGHT_EFFECT_CHRISTMAS)     \
   || defined(RGBLIGHT_EFFECT_RGB_TEST)      \
   || defined(RGBLIGHT_EFFECT_ALTERNATING)   \
-  || defined(RGBLIGHT_EFFECT_TWINKLE)
+  || defined(RGBLIGHT_EFFECT_TWINKLE)       \
+  || defined(RGBLIGHT_EFFECT_REACT)
 #    define RGBLIGHT_USE_TIMER
 #endif
 
@@ -426,7 +428,7 @@ typedef struct _animation_status_t {
 
 extern animation_status_t animation_status;
 
-void rgblight_effect_breathing(animation_status_t *anim);
+void rgblight_effect_breathing(animation_status_t *anim); 
 void rgblight_effect_rainbow_mood(animation_status_t *anim);
 void rgblight_effect_rainbow_swirl(animation_status_t *anim);
 void rgblight_effect_snake(animation_status_t *anim);
@@ -435,6 +437,7 @@ void rgblight_effect_christmas(animation_status_t *anim);
 void rgblight_effect_rgbtest(animation_status_t *anim);
 void rgblight_effect_alternating(animation_status_t *anim);
 void rgblight_effect_twinkle(animation_status_t *anim);
+void rgblight_effect_react(animation_status_t *anim);
 
 #    endif
 

@@ -417,6 +417,7 @@ enum quantum_keycodes {
     RGB_MODE_XMAS,
     RGB_MODE_GRADIENT,
     RGB_MODE_RGBTEST,
+    RGB_MODE_REACT,
 
     // Momentum matching toggle
     VLK_TOG,

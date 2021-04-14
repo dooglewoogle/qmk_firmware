@@ -998,6 +998,14 @@ void rgblight_task(void) {
             effect_func   = (effect_func_t)rgblight_effect_twinkle;
         }
 #    endif
+#ifdef RGBLIGHT_EFFECT_REACT
+        else if (rgblight_status.base_mode == RGBLIGHT_MODE_REACT){
+            interval_time = 20;
+            effect_func = (effect_func_t)rgblight_effect_react;
+        }
+#endif
+
+
         if (animation_status.restart) {
             animation_status.restart    = false;
             animation_status.last_timer = sync_timer_read();
@@ -1372,4 +1380,11 @@ void rgblight_effect_twinkle(animation_status_t *anim) {
 
     rgblight_set();
 }
+#endif
+
+#ifdef RGBLIGHT_EFFECT_REACT
+void rgblight_effect_react(animation_status_t *anim){
+    rgblight_setrgb(255, 127, 0);
+}
+
 #endif
